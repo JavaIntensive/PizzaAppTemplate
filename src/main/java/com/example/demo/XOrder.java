@@ -15,6 +15,7 @@ public class XOrder {
     private long id;
     private LocalDate dateTime;
     private String toppings;
+    private double price;
     //TODO: price as double
     //TODO: in the html template
     // Add path for javascript / css from bootstrap
