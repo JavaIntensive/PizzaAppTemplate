@@ -27,6 +27,8 @@ public class User {
 
   //TODO: add telephone number
   //TODO: Billi has removed the enabled as we dont need it
+    @Column(name = "enabled")
+    private boolean enabled;
 
     @Column(name = "username")
     private String username;
@@ -49,6 +51,7 @@ public class User {
         this.setFirstName(firstName);
         this.setLastName(lastName);
   //TODO: add respective changes
+        this.setEnabled(enabled);
         this.setUsername(username);
     }
 
@@ -116,6 +119,14 @@ public class User {
 
     public void setOrders(Collection<XOrder> orders) {
         this.orders = orders;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
 

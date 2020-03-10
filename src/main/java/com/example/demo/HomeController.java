@@ -46,13 +46,9 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String listOrders(Principal principal, Model model) {
-        if(userService.getUser() != null) {
-            model.addAttribute("user_id", userService.getUser().getId());
-        }
+    public String index(Model model) {
 
-        model.addAttribute("orders", orderRepository.findAll());
-        return "index01";
+        return "index";
     }
 
 
