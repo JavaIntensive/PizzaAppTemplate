@@ -66,13 +66,15 @@
     </div>
 
 <form th:action="@{/login}" method="post">
-    <div><label>User name: <input type="text" name="username"/>
+    <div><label>User name: <input type="text" name="username" required />
         </label></div>
 
-    <div><label>Password: <input type="password" name="password"/>
+    <div><label>Password: <input type="password" name="password" required />
         </label></div>
     <div><input type="submit" value="Sign in"/></div>
 </form>
+
+<div th:replace="base :: footer "></div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

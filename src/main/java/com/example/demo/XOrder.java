@@ -16,36 +16,16 @@ public class XOrder {
     private LocalDate dateTime;
     private String toppings;
     private double price;
-    //TODO: price as double
-    //TODO: in the html template
-    // Add path for javascript / css from bootstrap
-    // add thymeleaf on top
-    // add navigation bootstrap
-    // everything you think we need to have
-    // then we will see together
-    // add readme file if you can
-
-     /* private String dough;
-
-    private String sauce;
-
-    private String cheese;
-
-    @Nullable
-    private String spinach;
-
-    @Nullable
-    private String bacon;
-
-    @Nullable
-    private String mushroom;
-
-    @Nullable
-    private String tomato;*/
 
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    private final double basePrice = 5.00;
+
+    public XOrder(String toppings) {
+        this.toppings = toppings;
+    }
 
     public XOrder() {
        dateTime= LocalDate.now();
@@ -81,5 +61,17 @@ public class XOrder {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double calculatePrice(String toppings) {
+        return basePrice + (toppings.split(",").length - 5) * 0.50;
     }
 }

@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.BindingResult;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ public class HomeController {
     UserRepository userRepository;
 
     @Autowired
-    XOrderRepository orderRepository;
+    XOrderRepository xOrderRepository;
 
     @GetMapping("/register")
     public String showRegistrationPage(Model model) {
@@ -47,23 +49,33 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index(Model model) {
-
+        model.addAttribute("orders", xOrderRepository.findAll());
         return "index";
     }
 
-    @GetMapping("/add")
-    public String orderForm(Model model) {
+    @GetMapping("/addPizza")
+    public String addPizza(Model model) {
         model.addAttribute("order", new XOrder());
         return "orderform";
     }
 
-    @PostMapping("/process")
-    public String processForm(@ModelAttribute XOrder order, Model model) {
-
-        order.setUser(userService.getUser());
-        orderRepository.save(order);
+    @PostMapping("/addPizza")
+    public @ResponseBody String addPizza(HttpServletRequest request, HttpServletResponse response) {
+        XOrder pizza = new XOrder();
+        pizza.setToppings(request.getParameter("toppings"));
+        pizza.setUser(userService.getUser());
+        pizza.setPrice(pizza.calculatePrice(request.getParameter("toppings")));
+        xOrderRepository.save(pizza);
         return "redirect:/";
     }
+
+//    @PostMapping("/process")
+//    public String processForm(@ModelAttribute XOrder order, Model model) {
+//
+//        order.setUser(userService.getUser());
+//        xOrderRepository.save(order);
+//        return "redirect:/";
+//    }
 
     @RequestMapping("/login")
     public String login() {
@@ -85,40 +97,40 @@ public class HomeController {
     @RequestMapping("/myorders")
     public String myOrders(Model model) {
         User user = userService.getUser();
-        ArrayList<XOrder> orders = (ArrayList<XOrder>) orderRepository.findByUser(user);
+        ArrayList<XOrder> orders = (ArrayList<XOrder>) xOrderRepository.findByUser(user);
         model.addAttribute("orders", orders);
 
         return "myorders";
     }
 
-    @RequestMapping("/allorders")
+    @RequestMapping("/admin")
     public String allOrders(Model model) {
         if (userService.getUser() != null) {
             model.addAttribute("user_id", userService.getUser().getId());
         }
 
-        model.addAttribute("orders", orderRepository.findAll());
-        return "allorders";
+        model.addAttribute("orders", xOrderRepository.findAll());
+        return "admin";
     }
 
     @RequestMapping("/detail/{id}")
     public String showMessage(@PathVariable("id") long id, Model model) {
-        model.addAttribute("order", orderRepository.findById(id).get());
+        model.addAttribute("order", xOrderRepository.findById(id).get());
         return "show";
     }
 
     @RequestMapping("/update/{id}")
     public String updateMessage(@PathVariable("id") long id, Model model) {
-        model.addAttribute("order", orderRepository.findById(id).get());
+        model.addAttribute("order", xOrderRepository.findById(id).get());
         return "orderform";
     }
 
     @RequestMapping("/delete/{id}")
     public String delMessage(@PathVariable("id") long id, Authentication auth) {
-        orderRepository.deleteById(id);
+        xOrderRepository.deleteById(id);
 
         if (auth.getAuthorities().toString().equals("[ADMIN]")) {
-            return "redirect:/allorders";
+            return "redirect:/admin";
         }
 
         else {
