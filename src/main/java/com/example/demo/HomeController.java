@@ -62,11 +62,13 @@ public class HomeController {
     @PostMapping("/addPizza")
     public @ResponseBody String addPizza(HttpServletRequest request, HttpServletResponse response) {
         XOrder pizza = new XOrder();
+//        pizza.setPrice(0);
         pizza.setToppings(request.getParameter("toppings"));
         pizza.setUser(userService.getUser());
         pizza.setPrice(pizza.calculatePrice(request.getParameter("toppings")));
         xOrderRepository.save(pizza);
         return "redirect:/";
+
     }
 
 //    @PostMapping("/process")

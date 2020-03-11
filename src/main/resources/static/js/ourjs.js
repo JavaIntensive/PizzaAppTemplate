@@ -202,6 +202,7 @@ pf.addEventListener("submit", (e)=> {
     // const selected = "pizza test";
     console.log(selected);
     sub();
+
 });
 
 // AJAX ADDED BELOW //
@@ -217,6 +218,7 @@ function sub() {
         },
         success:function(result){
             console.log(result);
+            window.location.href = "/";
         }
     });
 }

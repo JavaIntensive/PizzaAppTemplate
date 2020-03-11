@@ -14,8 +14,8 @@
         <td>Actions</td>
     </tr>
     <tr th:each="order : ${orders}">
-        <td th:text="${order.dough}"></td>
-        <td th:text="${order.sauce}"></td>
+        <td th:text="${order.toppings}"></td>
+        <td th:text="${order.price}"></td>
         <td th:text="${order.user.username}"></td>
 
             <td>

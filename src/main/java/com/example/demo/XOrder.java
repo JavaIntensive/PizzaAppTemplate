@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -13,7 +13,7 @@ public class XOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private LocalDate dateTime;
+    private LocalDateTime dateTime;
     private String toppings;
     private double price;
 
@@ -28,14 +28,14 @@ public class XOrder {
     }
 
     public XOrder() {
-       dateTime= LocalDate.now();
+       dateTime= LocalDateTime.now();
     }
 
-    public LocalDate getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDate dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
@@ -73,5 +73,6 @@ public class XOrder {
 
     public double calculatePrice(String toppings) {
         return basePrice + (toppings.split(",").length - 5) * 0.50;
+//        return Double.parseDouble(toppings.substring(toppings.length() - 4));
     }
 }
