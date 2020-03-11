@@ -9,53 +9,26 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+<!--    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="css/animate.css">-->
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+<!--    <link rel="stylesheet" href="css/owl.carousel.min.css">-->
+<!--    <link rel="stylesheet" href="css/owl.theme.default.min.css">-->
+<!--    <link rel="stylesheet" href="css/magnific-popup.css">-->
 
-    <link rel="stylesheet" href="css/aos.css">
+<!--    <link rel="stylesheet" href="css/aos.css">-->
 
 <!--    <link rel="stylesheet" href="css/ionicons.min.css">-->
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+<!--    <link rel="stylesheet" href="css/bootstrap-datepicker.css">-->
+<!--    <link rel="stylesheet" href="css/jquery.timepicker.css">-->
 
 
 <!--    <link rel="stylesheet" href="css/flaticon.css">-->
-    <link rel="stylesheet" href="css/icomoon.css">
+<!--    <link rel="stylesheet" href="css/icomoon.css">-->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<!--<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">-->
-<!--    <div class="container">-->
-<!--        <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizza<br><small>Delicous</small></a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="oi oi-menu"></span> Menu-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="ftco-nav">-->
-<!--            <ul class="navbar-nav ml-auto">-->
-<!--                <li class="nav-item active" sec:authorize="!isAuthenticated()">-->
-<!--                    <a href="/" class="nav-link">Home</a></li>-->
-
-<!--                <li class="nav-item" sec:authorize="!isAuthenticated()">-->
-<!--                    <a href="/login" class="nav-link">Login</a></li>-->
-
-<!--                <li class="nav-item" sec:authorize="!isAuthenticated()">-->
-<!--                    <a href="/register" class="nav-link">Register</a></li>-->
-
-<!--                <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">-->
-<!--                    <a href="/allorders" class="nav-link">All Orders</a>-->
-<!--                </li>-->
-<!--                &lt;!&ndash;                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>&ndash;&gt;-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-<!-- END nav -->
 
 <div sec:authorize="isAnonymous()">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -114,55 +87,29 @@
 <!--        <div class="container">-->
 <!--            <div class="row slider-text align-items-center" data-scrollax-parent="true">-->
 
-<!--                <div class="col-md-6 col-sm-12 ftco-animate">-->
-<!--                    <span class="subheading">Delicious</span>-->
-<!--                    <h1 class="mb-4">Italian Cuisine</h1>-->
-<!--                    <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
-<!--                    <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>-->
-<!--                </div>-->
-<!--                <div class="col-md-6 ftco-animate">-->
-<!--                    <img src="images/bg_1.png" class="img-fluid" alt="">-->
-<!--                </div>-->
+<div class="jumbotron jumbotron-fluid" style="background-image: url(images/bg_1.jpg);">
+<!--<section class="home-slider img" style="background-image: url(images/bg_1.jpg);">-->
+<!--    <div class="container">-->
+    <div class="slider-item">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text align-items-center" data-scrollax-parent="true">
 
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+            <div class="col-md-6 col-sm-12 <!--ftco-animate-->">
+                <span class="subheading">Delicious</span>
+                <h1 class="mb-4">Italian Cuisine</h1>
+                <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+            </div>
+            <div class="col-md-6 <!--ftco-animate-->">
+                <img src="images/bg_1.png" class="img-fluid" alt="">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
-<!--    <div class="slider-item">-->
-<!--        <div class="overlay"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="row slider-text align-items-center" data-scrollax-parent="true">-->
-
-<!--                <div class="col-md-6 col-sm-12 order-md-last ftco-animate">-->
-<!--                    <span class="subheading">Crunchy</span>-->
-<!--                    <h1 class="mb-4">Italian Pizza</h1>-->
-<!--                    <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
-<!--                    <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>-->
-<!--                </div>-->
-<!--                <div class="col-md-6 ftco-animate">-->
-<!--                    <img src="images/bg_2.png" class="img-fluid" alt="">-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="slider-item" style="background-image: url(images/bg_3.jpg);">-->
-<!--        <div class="overlay"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">-->
-
-<!--                <div class="col-md-7 col-sm-12 text-center ftco-animate">-->
-<!--                    <span class="subheading">Welcome</span>-->
-<!--                    <h1 class="mb-4">We cooked your desired Pizza Recipe</h1>-->
-<!--                    <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
-<!--                    <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
 
 
 
@@ -187,6 +134,17 @@
 <!--&lt;!&ndash;<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>&ndash;&gt;-->
 <!--&lt;!&ndash;<script src="js/google-map.js"></script>&ndash;&gt;-->
 <!--<script src="js/main.js"></script>-->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -25,10 +25,8 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-  //TODO: add telephone number
-  //TODO: Billi has removed the enabled as we dont need it
-    @Column(name = "enabled")
-    private boolean enabled;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     @Column(name = "username")
     private String username;
@@ -45,14 +43,13 @@ public class User {
 //        messages = new HashSet<>();
     }
 
-    public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
+    public User(String email, String password, String firstName, String lastName, String username, String phoneNumber) {
         this.setEmail(email);
         this.setPassword(password);
         this.setFirstName(firstName);
         this.setLastName(lastName);
-  //TODO: add respective changes
-        this.setEnabled(enabled);
         this.setUsername(username);
+        this.setPhoneNumber(phoneNumber);
     }
 
     public long getId() {
@@ -121,12 +118,12 @@ public class User {
         this.orders = orders;
     }
 
-    public boolean isEnabled() {
-        return enabled;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
 
