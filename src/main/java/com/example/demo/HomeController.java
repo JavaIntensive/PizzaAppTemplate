@@ -51,7 +51,6 @@ public class HomeController {
         return "index";
     }
 
-
     @GetMapping("/add")
     public String orderForm(Model model) {
         model.addAttribute("order", new XOrder());
